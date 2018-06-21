@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import django.utils.timezone as timezone
+from django.utils import timezone
 from django.db import models
 
 # Create your models here.
