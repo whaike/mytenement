@@ -1,0 +1,46 @@
+{% extends 'wae/base.html' %}
+{% block container %}
+
+<div class="container">
+	<h2>水表管理</h2>
+	<div class="cearfix">
+		{% comment %}
+		<div class="pull-right">
+			<a class="btn btn-default" href="/wae/water/">添加记录<i class="glyphicon glyphicon-plus"></i></a>
+		</div>
+		{% endcomment %}
+	</div>
+	<table class="table">
+		<tr>
+			<th>水表ID</th>
+			<th>度数</th>
+			<th>图片</th>
+			<th>拍摄日期</th>
+			<th>创建时间</th>
+			{# <th>管理</th> #}
+		</tr>
+		{% for water in waters %}
+			<tr>
+				<td>{{ water.id }}</td>
+				<td>{{ water.degree }}</td>
+				
+				<td class='imgshow'>
+					<span class="glyphicon glyphicon-picture"></span>
+					<div class="img">
+						<img src="/wae/{{ water.image.url }}">
+					</div>
+				</td>
+				<td>{{ water.img_date }}</td>
+				<td>{{ water.create_at }}</td>
+				{% comment %}
+				<td>
+					<a href="/wae/water/?id={{ water.id }}">编辑<i class="glyphicon glyphicon-plus"></i></a>
+				</td>
+				{% endcomment %}
+			</tr>
+		{% endfor %}
+	</table>
+	
+</div>
+
+{% endblock %}

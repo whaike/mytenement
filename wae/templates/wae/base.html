@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>租房管理系统</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'wae/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+	<style type="text/css">
+		td.imgshow > div > img{
+			display: none;
+		}
+
+		.imgshow {
+			position: relative;
+		}
+
+		.imgshow .img {
+			position: absolute;
+			left: 25px;
+			top: 25px;
+			max-width: 200px;
+		}
+
+		.imgshow .img img {
+			max-width: 100%;
+		}
+	</style>
+	<script type="text/javascript" src="{% static 'wae/js/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'wae/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">租房管理系统</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+	
+				<li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">日常统计<span class="caret"></span></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="/wae/waters/">水表管理</a></li>
+	                <li><a href="/wae/elecs/">电表管理</a></li>
+	              </ul>
+	            </li>
+
+			</ul>
+			
+		</div>
+	</div>
+</nav>
+{% block container %}
+<h2>block container </h2>
+{% endblock %}
+<script type="text/javascript">
+		$(document).ready(function(){
+			console.log('test');
+			$(".imgshow").mouseenter(function(){
+				console.log('1111111111111');
+			 	$(".imgshow > div > img ").css("display","block");
+			});
+			$(".imgshow").mouseleave(function(){
+				console.log('222222222');
+			 	$(".imgshow > div > img ").css("display","none");
+			});
+		});
+	</script>
+</body>
+</html>
