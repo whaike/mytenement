@@ -11,7 +11,7 @@ class Watermeter(models.Model):
 
 	degree = models.IntegerField(verbose_name=u'度数')
 	image = models.ImageField(verbose_name=u'图片',max_length=100,upload_to='water/%Y/%m/%d')
-	img_date = models.DateTimeField(verbose_name=u'拍摄日期',default=timezone.now())
+	img_date = models.DateTimeField(verbose_name=u'拍摄日期',default=timezone.now)
 	create_at = models.DateTimeField(verbose_name=u'创建时间',auto_now_add=True)
 
 	def __unicode__(self):
@@ -26,7 +26,7 @@ class Ammeter(models.Model):
 
 	degree = models.IntegerField(verbose_name=u'度数')
 	image = models.ImageField(verbose_name=u'图片',max_length=100,upload_to='elec/%Y/%m/%d')
-	img_date = models.DateTimeField(verbose_name=u'拍摄日期',default=timezone.now())
+	img_date = models.DateTimeField(verbose_name=u'拍摄日期',default=timezone.now)
 	create_at = models.DateTimeField(verbose_name=u'创建时间',auto_now_add=True)
 
 	def __unicode__(self):
